@@ -20,7 +20,7 @@ class Base(DeclarativeBase):
                                      default=uuid.uuid4)
 
 
-engine = create_async_engine(settings.DATABASE_URL)
+engine = create_async_engine(settings.DATABASE_URL, isolation_level="SERIALIZABLE")
 async_session_maker = async_sessionmaker(engine)
 
 

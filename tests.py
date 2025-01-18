@@ -52,7 +52,7 @@ def test_get_wallet():
     Получаем баланс запросом
     """
     responce = requests.get(f"{host}/api/v1/wallets/{wallet_uuid}")
-    assert float(responce.json()['amount']) == 10.00
+    assert int(responce.json()['amount']) == 10
     assert responce.status_code == 200
 
 

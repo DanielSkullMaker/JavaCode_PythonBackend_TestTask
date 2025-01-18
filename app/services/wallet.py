@@ -9,7 +9,7 @@ class WalletService:
     def __init__(self, session: AsyncSession):
         self.session = session
 
-    async def _update_wallet(self, obj_db: Wallet, amount: float) -> Wallet:
+    async def _update_wallet(self, obj_db: Wallet, amount: int) -> Wallet:
         """
         Обновляет сумму кошелька
         """
